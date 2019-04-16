@@ -1,49 +1,44 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blue/flutter_blue.dart';
-import 'package:barcode_scan/barcode_scan.dart';
-import 'package:flutter_range_slider/flutter_range_slider.dart';
-
-List<Widget> _children = [];
 
 var token = '';
-
-//final GoogleSignIn _googleSignIn = GoogleSignIn();
-
 FlutterBlue flutterBlue = FlutterBlue.instance;
 
 void main() => runApp(new MyApp());
+/*void main() {
+
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight])
+      .then((_) {
+
+    runApp(MyApp());
+
+  });
+}
+*/
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        title: 'Smart Control (Fish Pool)',
+        title: 'Smart Control',
         theme: new ThemeData(
-          primarySwatch: Colors.amber,
+          primarySwatch: Colors.blue,
         ),
-        home: new MyHomePage(title: 'Smart Control (Fish Pool)'));
+        ////DEBUG BANNER ini silmek icin alttakini ac !!!!!!!!!!!!!!!!!!!!!!!
+        //debugShowCheckedModeBanner: false,
+        home: new MyHomePage(title: 'Smart Control')
+    );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
-
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
@@ -54,27 +49,30 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
   }
-
-  void onTabTapped(int index) {
+  //void onTabTapped(int index) {
+  /*void _incrementCounter() {
     setState(() {
-
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
         onWillPop: _onWillPop,
         child: Scaffold(
+            backgroundColor: Colors.black,
             appBar: AppBar(
-              title: Text('Smart Control (Fish Pool)'),
+              title: Text('Vip Smart Control',textAlign: TextAlign.right,),
             ),
             body: AccountWidget(this)
         ));
   }
 
   _buildProgressBarTile() {
-    return new LinearProgressIndicator();
+    return Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: new LinearProgressIndicator(),
+    );
   }
 
   Future<bool> _onWillPop() {
@@ -101,9 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
 // ignore: must_be_immutable
 class AccountWidget extends StatefulWidget {
   _MyHomePageState parent;
-
   AccountWidget(this.parent);
-
   @override
   _AccountWidget createState() => new _AccountWidget(this.parent);
 }
@@ -144,13 +140,8 @@ class _AccountWidget extends State<AccountWidget> {
 
   var params = [];
   var data = "0";
-
-  bool switchOn = false;
-  bool setTemperature = false;
   bool enable = false;
 
-  double _lowerValue = 20.0;
-  double _upperValue = 80.0;
 
   @override
   void initState() {
@@ -181,33 +172,11 @@ class _AccountWidget extends State<AccountWidget> {
     super.dispose();
   }
 
-  Future scan() async {
-    try {
-      String barcode = await BarcodeScanner.scan();
-      setState(() {
-        this.barcode = barcode;
-        this.params = barcode.split(',');
-        print(this.params);
-        _startScan();
-      });
-    } on PlatformException catch (e) {
-      if (e.code == BarcodeScanner.CameraAccessDenied) {
-        setState(() {
-          this.barcode = 'The user did not grant the camera permission!';
-        });
-      } else {
-        setState(() => this.barcode = 'Unknown error: $e');
-      }
-    } on FormatException {
-      setState(() => this.barcode =
-      'null (User returned using the "back"-button before scanning anything. Result)');
-    } catch (e) {
-      setState(() => this.barcode = 'Unknown error: $e');
-    }
-  }
-
   _buildProgressBarTile() {
-    return new LinearProgressIndicator();
+    return Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: new LinearProgressIndicator(),
+    );
   }
 
   _startScan() {
@@ -362,13 +331,11 @@ class _AccountWidget extends State<AccountWidget> {
   }
   void saveDeviceSetting() {
     deviceSaving = true;
-    print('save device setting: ' + switchOn.toString());
-    var json = '{"switch":"' + (switchOn ? '1' : '0') +
-        '","enable":"' + (enable ? '1' : '0')  +
-        '","min":"' +  _lowerValue.toInt().toString()  +
-        '","max":"' + _upperValue.toInt().toString()  +
-        '"}';
-    print("===== json: " + json);
+
+    /////////////bluetoote gidecek deger token ile buraya getiriliyor.//////////////////////////////
+       var json = token;
+   //print("===== json: " + json);
+   // print("*10/28#\n");
     var jsonList = json.codeUnits;
     var json20 = new List<int>();
     var size = jsonList.length;
@@ -404,14 +371,14 @@ class _AccountWidget extends State<AccountWidget> {
               + ", t=" + d[3].toString()
               + ", s=" + d[4].toString());
 
-          if (!setTemperature) {
+         /* if (!setTemperature) {
             _lowerValue = d[1].toDouble();
             _upperValue = d[2].toDouble();
             setTemperature = true;
-          }
+          }*/
           data = d[3].toString();
           if (!deviceSaving) {
-            switchOn = (d[4].toString() == "1");
+           // switchOn = (d[4].toString() == "1");
           }
         });
       });
@@ -422,112 +389,283 @@ class _AccountWidget extends State<AccountWidget> {
   }
 
   @override
+  /////////////////////////////////////////////////
+  //////////////////////////BURADA BUTONLAR OLACAK ////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////
   Widget build(BuildContext context) {
-    var qrBtn = Container(
-        padding: EdgeInsets.all(4.0),
-        child: RaisedButton(
-            onPressed: scan,
-            color: isScanning ? Colors.grey : Colors.black54,
-            child: Text("Scan QR Code",
-              style: TextStyle(color: Colors.white),
-            ))
-    );
-    var scanBtn = Container(
-        padding: EdgeInsets.all(4.0),
-        child:
-        RaisedButton(
-            onPressed: isScanning ? null : _startScan,
-            color: isScanning ? Colors.grey : Colors.black54,
-            child: Text("Search Device",
-              style: TextStyle(color: Colors.white),
-            ))
-    );
-    var bleRow = Row(
-      children: <Widget>[qrBtn, scanBtn],
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
-    );
-    var disconnectBtn = RaisedButton(
-      onPressed: () => _disconnect(), child: new Text("Disconnect"),
-      color: Colors.redAccent,
+   /////////QR kod tara butonu idi bosaltildi
+    /////////BLUETOOTH BAGLANTI SAYFASI
+//=================================================================================
+    var bleRow = Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: new Stack(
+              children: [
+                /////////////////////////
+                new Image.asset('img/bt_blue_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                ),
+                new    RawMaterialButton(
+                  child: Text(''),
+                  constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                  onPressed: isScanning ? null : _startScan,
+                ),
+
+              ],),
+          ),
+          //////////////////////////////////
+          Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: new Stack(
+              children: [
+              //yer kaplasin diye -gereksiz
+                RawMaterialButton(
+                  child: Text(''),
+                  constraints:const BoxConstraints(minWidth:10.0,minHeight: 10.0 ) ,
+                  onPressed:(){},
+                ),
+
+
+              ],),
+          )
+        ],
+   //  mainAxisSize: MainAxisSize.min,
+   //   mainAxisAlignment: MainAxisAlignment.start,
     );
 
-    var deviceSetting = Column(children: <Widget>[
-      Container(child: Text('Device Settting', style: TextStyle(fontWeight: FontWeight.bold),),),
-      Container(child: Checkbox(value: enable, onChanged: (bool value) {
-        setState(() {
-          enable = value;
-          saveDeviceSetting();
-        });
-      }),),
-      Container(
-        child: Row(children: <Widget>[
-          Text(_lowerValue.toInt().toString()),
-          RangeSlider(
-            min: 20.0,
-            max: 40.0,
-            lowerValue: _lowerValue,
-            upperValue: _upperValue,
-            divisions: 100,
-            showValueIndicator: true,
-            valueIndicatorMaxDecimals: 0,
-            onChanged: (double newLowerValue, double newUpperValue) {
-              setState(() {
-                _lowerValue = newLowerValue;
-                _upperValue = newUpperValue;
-              });
-            },
-            onChangeStart:
-                (double startLowerValue, double startUpperValue) {
-              print('Started with values: $startLowerValue and $startUpperValue');
-            },
-            onChangeEnd: (double newLowerValue, double newUpperValue) {
-              print('Ended with values: $newLowerValue and $newUpperValue');
-              saveDeviceSetting();
-            },
-          ),
-          Text(_upperValue.toInt().toString())
-        ],
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-        ),
-      )
-    ],
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.end,
+
+    ///bunu bosaltip cikis butonuna yama---------------->
+//=============================================
+    ///////////Disconnect butonu///////ana ekranın altinda ////////////////////////////////////////
+    var disconnectBtn = RaisedButton(
+      onPressed: () => _disconnect(), child: new Text("<-"),
+      color: Colors.amber,
     );
+
+//////device setting ve cekbox//////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///sutun (Clumn) olarak paketliyor//////////////////////////////////////////////////////////////////////////////////////
+    var deviceSetting = Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Row(children: <Widget>[
+////////////////////////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/bt_tv_200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  new    RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/28#\n";saveDeviceSetting();},
+                  ),
+
+                ],),
+            ),
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/bt_buzdolabi_200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/36#\n";saveDeviceSetting();},
+                  ),
+
+
+                ],),
+            ),
+            //////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/bt_sunroof_200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/38#\n";saveDeviceSetting();},
+                  ),
+
+
+                ],),
+            ),
+            //////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/bt-sag-masa-200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/30#\n";saveDeviceSetting();},
+                  ),
+
+
+                ],),
+            ),
+            //////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/32#\n";saveDeviceSetting();},
+                  ),
+
+
+                ],),
+            ),
+
+
+          ],
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Row(children: <Widget>[
+////////////////////////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/led1_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  new    RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/11#\n";saveDeviceSetting();},
+                  ),
+
+                ],),
+            ),
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/led2_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/13#\n";saveDeviceSetting();},
+                  ),
+
+
+                ],),
+            ),
+            //////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/led3_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/15#\n";saveDeviceSetting();},
+                  ),
+
+
+                ],),
+            ),
+            //////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/led4_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/17#\n";saveDeviceSetting();},
+                  ),
+
+
+                ],),
+            ),
+            //////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: new Stack(
+                children: [
+                  /////////////////////////
+                  new Image.asset('img/bt-sag2-masa-200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  ),
+                  /////////////////////////
+                  RawMaterialButton(
+                    child: Text(''),
+                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                    onPressed:(){token="*/10/34#\n";saveDeviceSetting();},
+                  ),
+
+                ],),
+            ),
+
+          ],
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+          ),
+        ),
+
+      ],
+    );
+
+    //////////////Yukarda Tanimladi burada ekrana yerlestiriyor ve tetiklenmeleri isliyor.///////////////////////////////
     return Container(child: Column(
       children: <Widget>[
         (isScanning || isConnecting) ? _buildProgressBarTile() : Container(),
-        characteristic != null ? Container( child: Text(data, style: TextStyle(fontSize: 200),),) : Container(),
-        characteristic != null ? Container(
-          child: Transform.scale( scale: 2.0,
-            child: Switch(
-                value: switchOn,
-                activeColor: Colors.amber,
-                onChanged: (bool value) {
-                  setState(() {
-                    switchOn = value;
-                    saveDeviceSetting();
-                    print("========== switch: " + switchOn.toString());
-                  });
-                }
-            ),
-          ),
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 50),
-        ) : Container()
-        ,
+
         (isConnected == false)
             ? new Flexible(child: new ListView(children: isScanning ? new List<Widget>() : buildDeviceListView()))
             : new Container(child: characteristic != null ? deviceSetting : null),
         Container(
-          child: isConnected ? (isConnecting ? Container(child: Text("Connecting..."),) : disconnectBtn) : bleRow,
+          ////////bagli ise disconnect goster, gegil ise connect goster
+          //child: isConnected ? (isConnecting ? Container(child: Text("Connecting!..."),) : disconnectBtn) : bleRow,
+          child: isConnected ? (isConnecting ? Container(child: Text("Connecting!..."),) : null) : bleRow,
           padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
         ),
       ],
-      mainAxisSize: MainAxisSize.max,
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
     ),
       color: Colors.black54,
+
     );
   }
 }
