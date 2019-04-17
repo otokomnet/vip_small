@@ -7,8 +7,8 @@ import 'package:flutter_blue/flutter_blue.dart';
 var token = '';
 FlutterBlue flutterBlue = FlutterBlue.instance;
 
-void main() => runApp(new MyApp());
-/*void main() {
+//void main() => runApp(new MyApp());
+void main() {
 
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight])
@@ -18,7 +18,7 @@ void main() => runApp(new MyApp());
 
   });
 }
-*/
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -403,11 +403,11 @@ class _AccountWidget extends State<AccountWidget> {
             child: new Stack(
               children: [
                 /////////////////////////
-                new Image.asset('img/bt_blue_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                new Image.asset('img/bt_blue_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
                 ),
                 new    RawMaterialButton(
                   child: Text(''),
-                  constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
+                  constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
                   onPressed: isScanning ? null : _startScan,
                 ),
 
@@ -437,11 +437,11 @@ class _AccountWidget extends State<AccountWidget> {
     ///bunu bosaltip cikis butonuna yama---------------->
 //=============================================
     ///////////Disconnect butonu///////ana ekranın altinda ////////////////////////////////////////
-    var disconnectBtn = RaisedButton(
+   /* var disconnectBtn = RaisedButton(
       onPressed: () => _disconnect(), child: new Text("<-"),
       color: Colors.amber,
     );
-
+*/
 //////device setting ve cekbox//////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///sutun (Clumn) olarak paketliyor//////////////////////////////////////////////////////////////////////////////////////
     var deviceSetting = Column(
@@ -455,12 +455,12 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/bt_tv_200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/bt_tv_200.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   new    RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/28#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/28#\n";saveDeviceSetting();},
                   ),
 
                 ],),
@@ -472,13 +472,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/bt_buzdolabi_200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/bt_buzdolabi_200.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/36#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/36#\n";saveDeviceSetting();},
                   ),
 
 
@@ -490,13 +490,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/bt_sunroof_200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/bt_sunroof_200.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/38#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/38#\n";saveDeviceSetting();},
                   ),
 
 
@@ -508,13 +508,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/bt-sag-masa-200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/bt-sag-masa-200.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/30#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/30#\n";saveDeviceSetting();},
                   ),
 
 
@@ -526,13 +526,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/32#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/32#\n";saveDeviceSetting();},
                   ),
 
 
@@ -554,12 +554,12 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/led1_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/led1_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   new    RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/11#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/11#\n";saveDeviceSetting();},
                   ),
 
                 ],),
@@ -571,13 +571,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/led2_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/led2_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/13#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/13#\n";saveDeviceSetting();},
                   ),
 
 
@@ -589,13 +589,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/led3_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/led3_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/15#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/15#\n";saveDeviceSetting();},
                   ),
 
 
@@ -607,13 +607,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/led4_ok.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/led4_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/17#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/17#\n";saveDeviceSetting();},
                   ),
 
 
@@ -625,13 +625,13 @@ class _AccountWidget extends State<AccountWidget> {
               child: new Stack(
                 children: [
                   /////////////////////////
-                  new Image.asset('img/bt-sag2-masa-200.jpg', scale: 2.0, width: 100.0, height: 100.0
+                  new Image.asset('img/bt-sag2-masa-200.jpg', scale: 2.0, width: 80.0, height: 80.0
                   ),
                   /////////////////////////
                   RawMaterialButton(
                     child: Text(''),
-                    constraints:const BoxConstraints(minWidth:100.0,minHeight: 100.0 ) ,
-                    onPressed:(){token="*/10/34#\n";saveDeviceSetting();},
+                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                    onPressed:(){token="*10/34#\n";saveDeviceSetting();},
                   ),
 
                 ],),
