@@ -7,17 +7,17 @@ import 'package:flutter_blue/flutter_blue.dart';
 var token = '';
 FlutterBlue flutterBlue = FlutterBlue.instance;
 
-//void main() => runApp(new MyApp());
-void main() {
+void main() => runApp(new MyApp());
+/*void main() {
 
-  SystemChrome.setPreferredOrientations(
+ SystemChrome.setPreferredOrientations(
       [DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight])
       .then((_) {
 
     runApp(MyApp());
 
   });
-}
+}*/
 
 
 class MyApp extends StatelessWidget {
@@ -403,11 +403,11 @@ class _AccountWidget extends State<AccountWidget> {
             child: new Stack(
               children: [
                 /////////////////////////
-                new Image.asset('img/bt_blue_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
+                new Image.asset('img/bt_blue_ok.jpg', scale: 2.0, width: 200.0, height: 200.0
                 ),
                 new    RawMaterialButton(
                   child: Text(''),
-                  constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
+                  constraints:const BoxConstraints(minWidth:200.0,minHeight: 200.0 ) ,
                   onPressed: isScanning ? null : _startScan,
                 ),
 
@@ -443,211 +443,362 @@ class _AccountWidget extends State<AccountWidget> {
     );
 */
 //////device setting ve cekbox//////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////start//////////////////////////
     ///sutun (Clumn) olarak paketliyor//////////////////////////////////////////////////////////////////////////////////////
     var deviceSetting = Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: Row(children: <Widget>[
+          padding: const EdgeInsets.all(4.0),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Row(children: <Widget>[
 ////////////////////////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/bt_tv_200.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  new    RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/28#\n";saveDeviceSetting();},
-                  ),
 
-                ],),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/bt_tv_200.jpg', scale: 2.0, width: 80.0, height: 80.0
+                      ),
+                      new RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/28#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+                    ],),
+                ),
+////////////////////////////////////////////
+              ],
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+              ),
             ),
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/bt_buzdolabi_200.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/36#\n";saveDeviceSetting();},
-                  ),
-
-
-                ],),
-            ),
-            //////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/bt_sunroof_200.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/38#\n";saveDeviceSetting();},
-                  ),
-
-
-                ],),
-            ),
-            //////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/bt-sag-masa-200.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/30#\n";saveDeviceSetting();},
-                  ),
-
-
-                ],),
-            ),
-            //////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/32#\n";saveDeviceSetting();},
-                  ),
-
-
-                ],),
-            ),
-
-
-          ],
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
           ),
         ),
+        //////////////////////////////
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: Row(children: <Widget>[
+////////////////////////////////////////////////////
+
+              //////////////////////////////////
+              Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: new Stack(
+                  children: [
+                    /////////////////////////
+                    new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
+                        width: 80.0,
+                        height: 80.0
+                    ),
+                    /////////////////////////
+                    /*  RawMaterialButton(
+                      child: Text(''),
+                      constraints: const BoxConstraints(
+                          minWidth: 80.0, minHeight: 80.0),
+                      onPressed: () {
+                        token = "*10/38#\n";
+                        saveDeviceSetting();
+                      },
+                    ),
+*/
+
+                  ],),
+
+              ),
+              //////////////////////////////////
+              Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: new Stack(
+                  children: [
+                    /////////////////////////
+                    new Image.asset('img/bt_buzdolabi_200.jpg', scale: 2.0,
+                        width: 80.0,
+                        height: 80.0
+                    ),
+                    /////////////////////////
+                    RawMaterialButton(
+                      child: Text(''),
+                      constraints: const BoxConstraints(
+                          minWidth: 80.0, minHeight: 80.0),
+                      onPressed: () {
+                        token = "*10/36#\n";
+                        saveDeviceSetting();
+                      },
+                    ),
+
+
+                  ],),
+              ),
+
+//////////////
+              Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: new Stack(
+                  children: [
+                    /////////////////////////
+                    new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0,
+                        width: 80.0,
+                        height: 80.0
+                    ),
+                    /////////////////////////
+                    RawMaterialButton(
+                      child: Text(''),
+                      constraints: const BoxConstraints(
+                          minWidth: 80.0, minHeight: 80.0),
+                      onPressed: () {
+                        token = "*10/30#\n";
+                        saveDeviceSetting();
+                      },
+                    ),
+
+
+                  ],),
+              ),
+              ///////////
+            ],
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+            ),
+          ),
+        ),
+        //////////////////////////////
         Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: Row(children: <Widget>[
+          padding: const EdgeInsets.all(4.0),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Row(children: <Widget>[
 ////////////////////////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/led1_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  new    RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/11#\n";saveDeviceSetting();},
-                  ),
 
-                ],),
+////////////////////////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt-sag-masa-200.jpg', scale: 2.0,
+                          width: 80.0,
+                          height: 80.0
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/34#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+                    ],),
+                ),
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //////////////////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt_sunroof_200.jpg', scale: 2.0,
+                          width: 80.0,
+                          height: 80.0
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/38#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+
+                ),
+                ////////////////
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0,
+                          width: 80.0,
+                          height: 80.0
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/32#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+                ),
+                //////////////////////////////////
+
+              ],
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+              ),
             ),
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/led2_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/13#\n";saveDeviceSetting();},
-                  ),
-
-
-                ],),
-            ),
-            //////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/led3_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/15#\n";saveDeviceSetting();},
-                  ),
-
-
-                ],),
-            ),
-            //////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/led4_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/17#\n";saveDeviceSetting();},
-                  ),
-
-
-                ],),
-            ),
-            //////////////////////////////////
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: new Stack(
-                children: [
-                  /////////////////////////
-                  new Image.asset('img/bt-sag2-masa-200.jpg', scale: 2.0, width: 80.0, height: 80.0
-                  ),
-                  /////////////////////////
-                  RawMaterialButton(
-                    child: Text(''),
-                    constraints:const BoxConstraints(minWidth:80.0,minHeight: 80.0 ) ,
-                    onPressed:(){token="*10/34#\n";saveDeviceSetting();},
-                  ),
-
-                ],),
-            ),
-
-          ],
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
           ),
         ),
+        //////////////////////////////
+        Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Row(children: <Widget>[
+////////////////////////////////////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/led1_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
+                      ),
+                      new RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/11#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
 
+                    ],),
+                ),
+
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/led2_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/13#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+                ),
+                /////////////////////////////////
+
+              ],
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+              ),
+            ),
+          ),
+        ),
+///////////////////////////////
+        Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Row(children: <Widget>[
+////////////////////////////////////////////////////
+
+
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/led3_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/15#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+                ),
+                //////////////////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/led4_ok.jpg', scale: 2.0, width: 80.0, height: 80.0
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 80.0, minHeight: 80.0),
+                        onPressed: () {
+                          token = "*10/17#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+                ),
+                //////////////////////////////////
+
+
+              ],
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+              ),
+            ),
+          ),
+        ),
+        /////////
       ],
     );
+    //////////////end///////////////////
+
 
     //////////////Yukarda Tanimladi burada ekrana yerlestiriyor ve tetiklenmeleri isliyor.///////////////////////////////
-    return Container(child: Column(
+    return Container(
+       child: Column(
       children: <Widget>[
         (isScanning || isConnecting) ? _buildProgressBarTile() : Container(),
 
