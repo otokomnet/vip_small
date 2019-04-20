@@ -511,8 +511,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 60,
+                          height: 60
                       ),
                       /////////////////////////
                     ],),
@@ -653,8 +653,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 60,
+                          height: 60
                       ),
                       /////////////////////////
                     ],),
@@ -805,8 +805,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 60,
+                          height: 60
                       ),
                       /////////////////////////
                     ],),
@@ -911,8 +911,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 60,
+                          height: 60
                       ),
                       /////////////////////////
                     ],),
