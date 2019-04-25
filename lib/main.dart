@@ -457,6 +457,7 @@ class _AccountWidget extends State<AccountWidget> {
 */
 //////device setting ve cekbox//////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////start//////////////////////////
+  ///////////////////start//////////////////////////
     ///sutun (Clumn) olarak paketliyor//////////////////////////////////////////////////////////////////////////////////////
     var deviceSetting = Column(
       children: <Widget>[
@@ -468,18 +469,56 @@ class _AccountWidget extends State<AccountWidget> {
               child: Row(children: <Widget>[
 ////////////////////////////////////////////////////
 
+                ////////////////////////////////////////////
                 Padding(
-                  padding: const EdgeInsets.all(18.0),
+                  padding: const EdgeInsets.all(1.0),
                   child: new Stack(
                     children: [
                       /////////////////////////
                       new Image.asset(
-                          'img/bt_tv_200.jpg', scale: 2.0, width: 100, height: 100
+                          'img/bt_cam-200.jpg', scale: 2.0, width: 100.1, height: 100.1
                       ),
                       new RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
+                            minWidth: 100.1, minHeight: 100.1),
+                        onPressed: () {
+                          token = "*10/22#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+                    ],),
+                ),
+
+                /////////////BOS SIYAH/////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
+                          width: 100.2,
+                          height: 100.2
+                      ),
+                      /////////////////////////
+
+                    ],),
+
+                ),
+                //////////////EBS////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/bt_tv_200.jpg', scale: 2.0, width: 100.1, height: 100.1
+                      ),
+                      new RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 100.1, minHeight: 100.1),
                         onPressed: () {
                           token = "*10/28#\n";
                           saveDeviceSetting();
@@ -488,7 +527,46 @@ class _AccountWidget extends State<AccountWidget> {
 
                     ],),
                 ),
+
 ////////////////////////////////////////////
+                /////////////BOS SIYAH/////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
+                          width: 100.2,
+                          height: 100.2
+                      ),
+                      /////////////////////////
+
+                    ],),
+
+                ),
+                //////////////EBS////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt_uydu-200.jpg', scale: 2.0,
+                          width: 100.1,
+                          height: 100.1
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 100.1, minHeight: 100.1),
+                        onPressed: () {
+                          token = "*10/3#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+                    ],),
+                ),
+                ///////
               ],
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -496,6 +574,7 @@ class _AccountWidget extends State<AccountWidget> {
             ),
           ),
         ),
+
         //BOS SATIR==========//////////////bos satir//////////////
         Padding(
           padding: const EdgeInsets.all(1.0),
@@ -511,8 +590,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 60,
-                          height: 60
+                          width: 31.0,
+                          height: 31.0
                       ),
                       /////////////////////////
                     ],),
@@ -524,6 +603,7 @@ class _AccountWidget extends State<AccountWidget> {
             ),
           ),
         ),
+
         ///////////////////EOBS///////////
         Padding(
           padding: const EdgeInsets.all(1.0),
@@ -533,22 +613,28 @@ class _AccountWidget extends State<AccountWidget> {
               child: Row(children: <Widget>[
 ////////////////////////////////////////////////////
 
-                /////////////BOS SIYAH/////////////////////
+                ////////////////////////////////////////////
                 Padding(
                   padding: const EdgeInsets.all(1.0),
                   child: new Stack(
                     children: [
                       /////////////////////////
-                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                      new Image.asset(
+                          'img/led1_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
                       ),
-                      /////////////////////////
+                      new RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 100.1, minHeight: 100.1),
+                        onPressed: () {
+                          token = "*10/11#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
 
                     ],),
-
                 ),
-                //////////////EBS////////////////////
+
                 /////////////BOS SIYAH/////////////////////
                 Padding(
                   padding: const EdgeInsets.all(1.0),
@@ -556,8 +642,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 100.2,
+                          height: 100.2
                       ),
                       /////////////////////////
 
@@ -571,14 +657,14 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_buzdolabi_200.jpg', scale: 2.0,
-                          width: 100,
-                          height: 100
+                          width: 100.1,
+                          height: 100.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
+                            minWidth: 100.1, minHeight: 100.1),
                         onPressed: () {
                           token = "*10/36#\n";
                           saveDeviceSetting();
@@ -597,8 +683,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 100.2,
+                          height: 100.2
                       ),
                       /////////////////////////
 
@@ -612,14 +698,14 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0,
-                          width: 100,
-                          height: 100
+                          width: 100.1,
+                          height: 100.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
+                            minWidth: 100.1, minHeight: 100.1),
                         onPressed: () {
                           token = "*10/30#\n";
                           saveDeviceSetting();
@@ -653,8 +739,157 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 60,
-                          height: 60
+                          width: 31.0,
+                          height: 31.0
+                      ),
+                      /////////////////////////
+                    ],),
+                ),
+              ],
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+              ),
+            ),
+          ),
+        ),
+        ///////////////////EOBS///////////
+        ///////////////////EOBS///////////
+        Padding(
+          padding: const EdgeInsets.all(1.0),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(1.0),
+              child: Row(children: <Widget>[
+////////////////////////////////////////////////////
+
+                ////////////////////////////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/led2_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 100.1, minHeight: 100.1),
+                        onPressed: () {
+                          token = "*10/13#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+                ),
+                /////////////////////////////////
+
+                /////////////BOS SIYAH/////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
+                          width: 100.2,
+                          height: 100.2
+                      ),
+                      /////////////////////////
+
+                    ],),
+
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/led3_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 100.1, minHeight: 100.1),
+                        onPressed: () {
+                          token = "*10/15#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+                ),
+//////////////
+                /////////////BOS SIYAH/////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
+                          width: 100.2,
+                          height: 100.2
+                      ),
+                      /////////////////////////
+
+                    ],),
+
+                ),
+                //////////////EBS////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset(
+                          'img/led4_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
+                      ),
+                      /////////////////////////
+                      RawMaterialButton(
+                        child: Text(''),
+                        constraints: const BoxConstraints(
+                            minWidth: 100.1, minHeight: 100.1),
+                        onPressed: () {
+                          token = "*10/17#\n";
+                          saveDeviceSetting();
+                        },
+                      ),
+
+
+                    ],),
+                ),
+                //////////////////////////////////
+              ],
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+              ),
+            ),
+          ),
+        ),
+        //////////////////////////////
+        //BOS SATIR==========//////////////bos satir//////////////
+        Padding(
+          padding: const EdgeInsets.all(1.0),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(1.0),
+              child: Row(children: <Widget>[
+                ////////////////////////////////////////////
+                /////////////BOS SIYAH/////////////////////
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: new Stack(
+                    children: [
+                      /////////////////////////
+                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
+                          width: 31.0,
+                          height: 31.0
                       ),
                       /////////////////////////
                     ],),
@@ -682,14 +917,14 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt-sag-masa-200.jpg', scale: 2.0,
-                          width: 100,
-                          height: 100
+                          width: 100.1,
+                          height: 100.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
+                            minWidth: 100.1, minHeight: 100.1),
                         onPressed: () {
                           token = "*10/34#\n";
                           saveDeviceSetting();
@@ -706,8 +941,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 100.2,
+                          height: 100.2
                       ),
                       /////////////////////////
 
@@ -722,14 +957,14 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_sunroof_200.jpg', scale: 2.0,
-                          width: 100,
-                          height: 100
+                          width: 100.1,
+                          height: 100.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
+                            minWidth: 100.1, minHeight: 100.1),
                         onPressed: () {
                           token = "*10/38#\n";
                           saveDeviceSetting();
@@ -748,8 +983,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
+                          width: 100.2,
+                          height: 100.2
                       ),
                       /////////////////////////
 
@@ -763,14 +998,14 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0,
-                          width: 100,
-                          height: 100
+                          width: 100.1,
+                          height: 100.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
+                            minWidth: 100.1, minHeight: 100.1),
                         onPressed: () {
                           token = "*10/32#\n";
                           saveDeviceSetting();
@@ -805,8 +1040,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 60,
-                          height: 60
+                          width: 31.0,
+                          height: 31.0
                       ),
                       /////////////////////////
                     ],),
@@ -818,198 +1053,13 @@ class _AccountWidget extends State<AccountWidget> {
             ),
           ),
         ),
-        ///////////////////EOBS///////////
-        Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(1.0),
-              child: Row(children: <Widget>[
-////////////////////////////////////////////////////
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: new Stack(
-                    children: [
-                      /////////////////////////
-                      new Image.asset(
-                          'img/led1_ok.jpg', scale: 2.0, width: 100, height: 100
-                      ),
-                      new RawMaterialButton(
-                        child: Text(''),
-                        constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
-                        onPressed: () {
-                          token = "*10/11#\n";
-                          saveDeviceSetting();
-                        },
-                      ),
 
-                    ],),
-                ),
-
-                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                /////////////BOS SIYAH/////////////////////
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: new Stack(
-                    children: [
-                      /////////////////////////
-                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
-                      ),
-                      /////////////////////////
-
-                    ],),
-
-                ),
-                //////////////EBS////////////////////
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: new Stack(
-                    children: [
-                      /////////////////////////
-                      new Image.asset(
-                          'img/led2_ok.jpg', scale: 2.0, width: 100, height: 100
-                      ),
-                      /////////////////////////
-                      RawMaterialButton(
-                        child: Text(''),
-                        constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
-                        onPressed: () {
-                          token = "*10/13#\n";
-                          saveDeviceSetting();
-                        },
-                      ),
-
-
-                    ],),
-                ),
-                /////////////////////////////////
-
-              ],
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-              ),
-            ),
-          ),
-        ),
 ///////////////////////////////
-        //BOS SATIR==========//////////////bos satir//////////////
-        Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(1.0),
-              child: Row(children: <Widget>[
-                ////////////////////////////////////////////
-                /////////////BOS SIYAH/////////////////////
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: new Stack(
-                    children: [
-                      /////////////////////////
-                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 60,
-                          height: 60
-                      ),
-                      /////////////////////////
-                    ],),
-                ),
-              ],
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-              ),
-            ),
-          ),
-        ),
-        ///////////////////EOBS///////////
-        Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(1.0),
-              child: Row(children: <Widget>[
-////////////////////////////////////////////////////
-
-
-                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: new Stack(
-                    children: [
-                      /////////////////////////
-                      new Image.asset(
-                          'img/led3_ok.jpg', scale: 2.0, width: 100, height: 100
-                      ),
-                      /////////////////////////
-                      RawMaterialButton(
-                        child: Text(''),
-                        constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
-                        onPressed: () {
-                          token = "*10/15#\n";
-                          saveDeviceSetting();
-                        },
-                      ),
-
-
-                    ],),
-                ),
-                //////////////////////////////////
-                /////////////BOS SIYAH/////////////////////
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: new Stack(
-                    children: [
-                      /////////////////////////
-                      new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 120,
-                          height: 120
-                      ),
-                      /////////////////////////
-
-                    ],),
-
-                ),
-                //////////////EBS////////////////////
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: new Stack(
-                    children: [
-                      /////////////////////////
-                      new Image.asset(
-                          'img/led4_ok.jpg', scale: 2.0, width: 100, height: 100
-                      ),
-                      /////////////////////////
-                      RawMaterialButton(
-                        child: Text(''),
-                        constraints: const BoxConstraints(
-                            minWidth: 100, minHeight: 100),
-                        onPressed: () {
-                          token = "*10/17#\n";
-                          saveDeviceSetting();
-                        },
-                      ),
-
-
-                    ],),
-                ),
-                //////////////////////////////////
-
-
-              ],
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-              ),
-            ),
-          ),
-        ),
-        /////////
+          /////////
       ],
     );
+    //////////////end///////////////////
+
     //////////////end///////////////////
 
     //////////////Yukarda Tanimladi burada ekrana yerlestiriyor ve tetiklenmeleri isliyor.///////////////////////////////
