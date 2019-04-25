@@ -48,6 +48,8 @@ flutter:
   - img/led4_ok.jpg
   - img/bt_exit_ok-200.jpg
   - img/bt-sag2-masa-200.jpg
+  - img/bt_uydu-200.jpg
+  - img/bt_cam-200.jpg
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
