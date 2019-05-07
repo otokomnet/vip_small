@@ -462,10 +462,10 @@ class _AccountWidget extends State<AccountWidget> {
     var deviceSetting = Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(1.0),
+          padding: const EdgeInsets.all(5.0),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(1.0),
+              padding: const EdgeInsets.all(5.0),
               child: Row(children: <Widget>[
 ////////////////////////////////////////////////////
 
@@ -476,16 +476,24 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset(
-                          'img/bt_cam-200.jpg', scale: 2.0, width: 100.1, height: 100.1
+                          'img/bt_cam-200.jpg', scale: 2.0, width: 80.1, height: 80.1
                       ),
                       new RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/22#\n";
-                          saveDeviceSetting();
+
                         },
+
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/22#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
                     ],),
@@ -498,8 +506,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -513,16 +521,24 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset(
-                          'img/bt_tv_200.jpg', scale: 2.0, width: 100.1, height: 100.1
+                          'img/bt_tv_200.jpg', scale: 2.0, width: 80.1, height: 80.1
                       ),
                       new RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/28#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/28#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
+
                       ),
 
                     ],),
@@ -536,8 +552,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -551,18 +567,26 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_uydu-200.jpg', scale: 2.0,
-                          width: 100.1,
-                          height: 100.1
+                          width: 80.1,
+                          height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/3#\n";
-                          saveDeviceSetting();
+
                         },
+
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/3#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
                     ],),
                 ),
@@ -590,8 +614,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 31.0,
-                          height: 31.0
+                          width: 3.0,
+                          height: 3.0
                       ),
                       /////////////////////////
                     ],),
@@ -620,16 +644,24 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset(
-                          'img/led1_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
+                          'img/led1_ok.jpg', scale: 2.0, width: 80.1, height: 80.1
                       ),
                       new RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/11#\n";
-                          saveDeviceSetting();
+
                         },
+
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/11#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
                     ],),
@@ -642,8 +674,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -657,18 +689,25 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_buzdolabi_200.jpg', scale: 2.0,
-                          width: 100.1,
-                          height: 100.1
+                          width: 80.1,
+                          height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/36#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/36#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
 
@@ -683,8 +722,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -698,18 +737,25 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0,
-                          width: 100.1,
-                          height: 100.1
+                          width: 80.1,
+                          height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/30#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/30#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
 
@@ -739,8 +785,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 31.0,
-                          height: 31.0
+                          width: 3.0,
+                          height: 3.0
                       ),
                       /////////////////////////
                     ],),
@@ -769,17 +815,24 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset(
-                          'img/led2_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
+                          'img/led2_ok.jpg', scale: 2.0, width: 80.1, height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/13#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/13#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
 
@@ -794,8 +847,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -809,18 +862,26 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset(
-                          'img/led3_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
+                          'img/led3_ok.jpg', scale: 2.0, width: 80.1, height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/15#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/15#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
+
 
 
                     ],),
@@ -833,8 +894,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -848,17 +909,24 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset(
-                          'img/led4_ok.jpg', scale: 2.0, width: 100.1, height: 100.1
+                          'img/led4_ok.jpg', scale: 2.0, width: 80.1, height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/17#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/17#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
 
@@ -888,8 +956,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 31.0,
-                          height: 31.0
+                          width: 3.0,
+                          height: 3.0
                       ),
                       /////////////////////////
                     ],),
@@ -917,18 +985,25 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt-sag-masa-200.jpg', scale: 2.0,
-                          width: 100.1,
-                          height: 100.1
+                          width: 80.1,
+                          height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/34#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/34#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
                     ],),
@@ -941,8 +1016,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -957,18 +1032,25 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_sunroof_200.jpg', scale: 2.0,
-                          width: 100.1,
-                          height: 100.1
+                          width: 80.1,
+                          height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/38#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/38#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
 
@@ -983,8 +1065,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 100.2,
-                          height: 100.2
+                          width: 10.2,
+                          height: 10.2
                       ),
                       /////////////////////////
 
@@ -998,18 +1080,25 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt-sol-masa-200.jpg', scale: 2.0,
-                          width: 100.1,
-                          height: 100.1
+                          width: 80.1,
+                          height: 80.1
                       ),
                       /////////////////////////
                       RawMaterialButton(
                         child: Text(''),
                         constraints: const BoxConstraints(
-                            minWidth: 100.1, minHeight: 100.1),
+                            minWidth: 80.1, minHeight: 80.1),
                         onPressed: () {
-                          token = "*10/32#\n";
-                          saveDeviceSetting();
+
                         },
+                        onHighlightChanged: (isHigh) {
+                          if (isHigh==true) {
+                            token = "*10/32#\n";
+                            saveDeviceSetting();
+                          }
+
+                        },
+
                       ),
 
 
@@ -1040,8 +1129,8 @@ class _AccountWidget extends State<AccountWidget> {
                     children: [
                       /////////////////////////
                       new Image.asset('img/bt_exit_ok-200.jpg', scale: 2.0,
-                          width: 31.0,
-                          height: 31.0
+                          width: 3.0,
+                          height: 3.0
                       ),
                       /////////////////////////
                     ],),
